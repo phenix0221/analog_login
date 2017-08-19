@@ -1,6 +1,6 @@
 ### simulated_login程序简介
 
-- 作者：何应钦
+- 作者：phenix0221
 - QQ：381904496
 - Python版本：3.5.3
 - 程序版本：v1
