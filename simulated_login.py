@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Author: He Yingqin
+# Author: Yingqin He
 
 import datetime
 import os
