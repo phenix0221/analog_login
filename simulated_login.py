@@ -65,7 +65,7 @@ def user_register_username_check(username):
     # 普通用户注册时，对username做检验
     with shelve.open('.user_info') as user_info:
         while True:
-            if username == 'q' or username == 'Q':
+            if username.lower == 'q':
                 break
             elif username in user_info:  # 判断username是否存在
                 username = input('%s用户名已存在，请重新输入，或输入"q"退出：%s' % (color_red, color_end)).strip()
@@ -81,7 +81,7 @@ def user_login_username_check(username):
     # 普通用户登录时，对username做校验
     with shelve.open('.user_info') as user_info:
         while True:
-            if username == 'q' or username == 'Q':
+            if username.lower == 'q':
                 break
             elif username not in user_info:  # 判断username是否不存在
                 username = input('%s用户名不存在，请重新输入，或输入"q"退出：%s' % (color_red, color_end)).strip()
@@ -151,10 +151,10 @@ def password_modify(username):
 
 def user_delete():
     username = input('请输入要删除的用户名，或输入"q"退出：').strip()
-    if username != 'q' or username != 'Q':
+    if username.lower != 'q':
         with shelve.open('.user_info') as user_info:
             while True:
-                if username == 'q' or username == 'Q':
+                if username.lower == 'q':
                     break
                 elif username == 'administrator':
                     username = input('%s管理员用户不能删除，请重新输入，或输入"q"退出：%s' % (color_red, color_end)).strip()
@@ -173,10 +173,10 @@ def user_delete():
 
 def user_unlock():
     username = input('请输入要解锁的用户名，或输入"q"退出：').strip()
-    if username != 'q' or username != 'Q':
+    if username.lower != 'q':
         with shelve.open('.user_info', writeback=True) as user_info:
             while True:
-                if username == 'q' or username == 'Q':
+                if username.lower == 'q':
                     break
                 elif username not in user_info:
                     username = input('%s用户名不存在，请重新输入，或输入"q"退出：%s' % (color_red, color_end)).strip()
